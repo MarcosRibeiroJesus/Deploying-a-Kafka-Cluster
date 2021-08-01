@@ -1,6 +1,5 @@
 rootProject.name = 'kafka_demos'
 
-include "module3"
 include "module4"
 include "module5"
 include "module6"
