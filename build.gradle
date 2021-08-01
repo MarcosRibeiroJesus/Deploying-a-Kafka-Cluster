@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'io.kordek'
+version '1.0-SNAPSHOT'
+
+subprojects {
+
+    apply plugin: "java"
+    apply plugin: "application"
+
+    sourceCompatibility = JavaVersion.VERSION_11
+
+    repositories {
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation 'org.apache.kafka:kafka-clients:2.4.1'
+        implementation 'org.slf4j:slf4j-simple:1.7.30'
+        testCompile 'junit:junit:4.12'
+    }
+
+    application {
+        mainClassName = project.hasProperty("mainClass") ? getProperty("mainClass") : "NULL"
+    }
+}
