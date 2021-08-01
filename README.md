@@ -2,7 +2,7 @@
 
 
 ### To run the examples:
-Install Java (Oracle/OpenJDK) JDK 11 and Setup Gradle (grade wrapper) 
+Install Java (Oracle/OpenJDK) JDK 11 and Setup Gradle (gradle wrapper) 
 
 - docker-compose up
 - ./gradlew :module4:run -PmainClass='kafka.CreateTopic'
