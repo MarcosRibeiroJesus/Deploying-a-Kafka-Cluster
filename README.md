@@ -26,17 +26,13 @@ quote-feedback <br>
      - localhost:9092 (id: 1002 rack: null) <br>
 
 - ./gradlew :module5:run -PmainClass='kafka.Produce'
-> [kafka-producer-network-thread | producer-1] INFO org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: MdV6O-DXT6uD-P5UroCZHg                    <br>         
- <br>
+> [kafka-producer-network-thread | producer-1] INFO org.apache.kafka.clients.Metadata - [Producer clientId=producer-1] Cluster ID: MdV6O-DXT6uD-P5UroCZHg<br>
 Value with key 12334 assigned to partition: 0 <br>
 Value with key 12335 assigned to partition: 1 <br>
 Value with key 12334 assigned to partition: 0 <br>
- <br>
 [main] INFO org.apache.kafka.clients.producer.KafkaProducer - [Producer clientId=producer-1] Closing the Kafka producer with timeoutMillis = 9223372036854775807 ms. <br>
- <br>
 BUILD SUCCESSFUL in 1s <br>
 3 actionable tasks: 1 executed, 2 up-to-date <br>
-- ./gradlew :module5:run -PmainClass='kafka.ConsumeAndFail' --args "dispatch-service"
 
 ## To check Kafka logs:
 docker-compose logs kafka1 | (**Select-String** on Windows or **grep** on Unix) "insync"
