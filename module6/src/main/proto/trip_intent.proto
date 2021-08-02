@@ -1,0 +1,10 @@
+package kafka;
+
+option java_package = "kafka";
+option java_outer_classname = "RideHailingProtos";
+
+message TripIntent {
+  required int32 user_id = 1;
+  required string lat_lon_from = 2;
+  required string lat_lon_to = 3;
+}
