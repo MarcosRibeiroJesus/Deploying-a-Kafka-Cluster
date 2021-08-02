@@ -1,0 +1,42 @@
+version: "3.7"
+services:
+  zookeeper:
+    image: confluentinc/cp-zookeeper
+    environment:
+      ZOOKEEPER_CLIENT_PORT: 2181
+  kafka1:
+    image: confluentinc/cp-kafka
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka1:29092,PLAINTEXT_HOST://localhost:9091
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_LOG4J_LOGGERS: kafka.controller=INFO,state.change.logger=INFO
+      CONFLUENT_SUPPORT_METRICS_ENABLE: "false"
+    ports:
+      - 9091:9091
+  kafka2:
+    image: confluentinc/cp-kafka
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka2:29092,PLAINTEXT_HOST://localhost:9092
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_LOG4J_LOGGERS: kafka.controller=INFO,state.change.logger=INFO
+      CONFLUENT_SUPPORT_METRICS_ENABLE: "false"
+    ports:
+      - 9092:9092
+  kafka3:
+    image: confluentinc/cp-kafka
+    depends_on:
+      - zookeeper
+    environment:
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka3:29092,PLAINTEXT_HOST://localhost:9093
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_LOG4J_LOGGERS: kafka.controller=INFO,state.change.logger=INFO
+      CONFLUENT_SUPPORT_METRICS_ENABLE: "false"
+    ports:
+      - 9093:9093        
