@@ -208,3 +208,6 @@ docker-compose logs kafka1 | (**Select-String** on Windows or **grep** on Unix) 
 
 ## To Access Confluent Control Center
 http://localhost:9021
+![Control-Center](https://user-images.githubusercontent.com/14364518/127801590-9dfb1104-697a-46e2-8850-0e24997141c3.png)
+![Control-Center 2](https://user-images.githubusercontent.com/14364518/127801626-c949489c-6137-461a-ada9-66d823a529b3.png)
+
