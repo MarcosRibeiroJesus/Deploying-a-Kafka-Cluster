@@ -1,0 +1,5 @@
+{
+  "name": "consumer1",
+  "format": "json",
+  "auto.offset.reset": "earliest"
+}
